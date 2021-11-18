@@ -1,0 +1,87 @@
+<script>
+  init({
+    title: 'mscoco',
+    desc: 'Our initial page for mscoco',
+    links: ['bootstrap-table.min.css'],
+    scripts: ['bootstrap-table.min.js']
+  })
+</script>
+
+<table
+  id="table"
+  data-toggle="table"
+  data-show-columns="true"
+  data-url="json/test-json.json">
+  <thead>
+    <tr>
+      <th data-field="sys" data-sortable="true">Model</th>
+      <th data-field="ensemble" data-sortable="true">ensemble</th>
+      <th data-field="wmt20-comet-da" data-sortable="true">wmt20-comet-da</th>
+      <th data-field="BLEURT" data-sortable="true">BLEURT</th>
+      <th data-field="wmt20-comet-qe-da" data-sortable="true">wmt20-comet-qe-da</th>
+      <th data-field="BERTScore" data-sortable="true">BERTScore</th>
+      <th data-field="Prism-ref" data-sortable="true">Prism-ref</th>
+      <th data-field="Prism-src" data-sortable="true">Prism-src</th>
+      <th data-field="CharacTER" data-sortable="true">CharacTER</th>
+      <th data-field="MoverScore" data-sortable="true">MoverScore</th>
+      <th data-field="METEOR" data-sortable="true">METEOR</th>
+      <th data-field="ROUGE-L" data-sortable="true">ROUGE-L</th>
+      <th data-field="chrF" data-sortable="true">chrF</th>
+      <th data-field="chrFpp" data-sortable="true">chrFpp</th>
+      <th data-field="TER" data-sortable="true">TER</th>
+      <th data-field="ROUGE-3" data-sortable="true">ROUGE-3</th>
+      <th data-field="SentBLEU" data-sortable="true">SentBLEU</th>
+      <th data-field="emnlp20-comet-rank" data-sortable="true">emnlp20-comet-rank</th>
+    </tr>
+  </thead>
+</table>
+
+<script>
+  var $table = $('#table')
+
+  function mounted() {
+    var data = [
+      {
+        'sys': 'Huoshan_Translate.919',
+        'ensemble': '-5.286674565257467',
+        'wmt20-comet-da': '0.5985297712860629',
+        'BLEURT': '0.498166801970452',
+        'wmt20-comet-qe-da': '0.3578329339550691',
+        'BERTScore': '0.9530287689864636',
+        'Prism-ref': '-1.3783330170705002',
+        'Prism-src': '-1.243638144725',
+        'CharacTER': '-0.3742613614567915',
+        'MoverScore': '0.5433685679328835',
+        'METEOR': '0.658594729687461',
+        'ROUGE-L': '0.6684700159125523',
+        'chrF': '65.83124294264833',
+        'chrFpp': '65.83124294264833',
+        'TER': '-46.75918281849037',
+        'ROUGE-3': '0.3847574230550423',
+        'SentBLEU': '46.46635948927654',
+        'emnlp20-comet-rank': '0.2126742863208055'
+      },
+      {
+        'sys': 'Huoshan_Translate.919',
+        'ensemble': '-4.286674565257467',
+        'wmt20-comet-da': '2.5985297712860629',
+        'BLEURT': '3.498166801970452',
+        'wmt20-comet-qe-da': '-0.3578329339550691',
+        'BERTScore': '1.9530287689864636',
+        'Prism-ref': '-2.3783330170705002',
+        'Prism-src': '-5.243638144725',
+        'CharacTER': '-14.3742613614567915',
+        'MoverScore': '8.5433685679328835',
+        'METEOR': '-0.658594729687461',
+        'ROUGE-L': '1.6684700159125523',
+        'chrF': '66.83124294264833',
+        'chrFpp': '61.83124294264833',
+        'TER': '-44.75918281849037',
+        'ROUGE-3': '1.3847574230550423',
+        'SentBLEU': '43.46635948927654',
+        'emnlp20-comet-rank': '2.2126742863208055'
+      }
+    ]
+    $table.bootstrapTable({data: data})
+  }
+</script>
